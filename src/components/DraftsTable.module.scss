@@ -41,6 +41,29 @@
   }
 }
 
+.sortButton,
+.sortActive {
+  background: none;
+  border: none;
+  // 4px of padding forms the hover highlight; the matching negative margin
+  // keeps the header layout unchanged.
+  padding: 4px 8px;
+  margin: 0 -8px;
+  border-radius: 4px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: var(--color-button-active-bg);
+  }
+}
+
+.sortActive {
+  color: var(--color-gold);
+}
+
 .nameHeader,
 .nameCell {
   text-align: left;
