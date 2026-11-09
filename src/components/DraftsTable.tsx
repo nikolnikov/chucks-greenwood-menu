@@ -23,6 +23,12 @@ interface Column {
 
 const price = (value: string) => Number.parseFloat(value) || 0
 
+/** "10.00" -> "$10", "6.50" -> "$6.5"; unparseable values are shown as given. */
+function formatPrice(value: string): string {
+  const amount = Number.parseFloat(value)
+  return `$${Number.isNaN(amount) ? value : amount}`
+}
+
 const COLUMNS: Column[] = [
   { key: 'number', label: '#', defaultDirection: 'asc', value: (d) => d.number },
   {
@@ -130,8 +136,8 @@ export function DraftsTable({ drafts }: DraftsTableProps) {
               </td>
               <td className={styles.hideOnMobile}>{draft.location}</td>
               <td className={styles.hideOnMobile}>{draft.abv}%</td>
-              <td className={styles.hideOnMobile}>${draft['full-price']}</td>
-              <td className={styles.hideOnMobile}>${draft['half-price']}</td>
+              <td className={styles.hideOnMobile}>{formatPrice(draft['full-price'])}</td>
+              <td className={styles.hideOnMobile}>{formatPrice(draft['half-price'])}</td>
             </tr>
           ))}
         </tbody>
