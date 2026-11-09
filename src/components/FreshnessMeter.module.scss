@@ -1,0 +1,19 @@
+.meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+
+  span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+.filled {
+  background-color: var(--color-fresh);
+}
+
+.empty {
+  background-color: var(--color-fresh-off);
+}

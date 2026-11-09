@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chucks-menu",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-08-29",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "triggers": {
+    "crons": ["*/15 * * * *"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "chucks-menu",
+      "database_id": "08f4f9e0-4d2a-4b89-bb16-970ae31bf57b",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

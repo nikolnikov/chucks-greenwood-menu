@@ -1,0 +1,32 @@
+.page {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 20px 20px 40px;
+  width: 100%;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 20px;
+  text-align: center;
+
+  img {
+    height: auto;
+    max-width: 200px;
+
+    @media (max-width: 900px) {
+      max-width: 120px;
+    }
+  }
+}
+
+.status {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.error {
+  color: var(--color-error);
+}
